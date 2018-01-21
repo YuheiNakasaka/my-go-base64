@@ -1,12 +1,3 @@
-# my-go-base64
-
-My base64 implementation without a bit shift in Go.
-
-Th performance is slower than the original encoding/base64 package.
-
-# Example
-
-```
 package main
 
 import (
@@ -33,11 +24,3 @@ func main() {
 	fmt.Println("Custom Encode:   ", enc2)
 	fmt.Println("Custom Decode:   ", dec2)
 }
-s
-
-// => Src message:      ABCDEFG
-// => Original Encode:  QUJDREVGRw==
-// => Original Decode:  ABCDEFG
-// => Custom Encode:    QUJDREVGRw==
-// => Custom Decode:    ABCDEFG
-```
