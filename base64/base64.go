@@ -46,9 +46,14 @@ func convert(ss []string) string {
 		i2, _ := strconv.ParseInt(ss[i], 2, 0)
 		s = fmt.Sprintf("%s%s", s, string(encodeStr[i2]))
 	}
-	return s + "=="
+
+	l := (4 - len(s)%4) % 4
+	pad := strings.Repeat("=", l)
+
+	return s + pad
 }
 
+// Encode message with [A-Z][a-z][1-9]+/
 func Encode(s string) string {
 	bins := stringToBin(s)
 	bin6s := split6bits(bins)
